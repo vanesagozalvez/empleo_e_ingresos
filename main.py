@@ -217,7 +217,9 @@ def get_periodos(
     return {"desde": min(periodos), "hasta": max(periodos)}
 
 
+@app.get("/api/datos/")
 @app.get("/api/datos")
+
 def get_datos(
     fuente:     str = Query(...),
     frecuencia: str = Query(...),
