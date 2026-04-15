@@ -653,11 +653,12 @@ bOk.addEventListener('click', async () => {
   bOk.disabled = true;
   bOk.innerHTML = '<span class="spinner"></span> Consultando...';
   try {
-    const url =
-      `/api/datos?fuente=${encodeURIComponent(S.fuente)}`+
-      `&frecuencia=${encodeURIComponent(S.frecuencia)}`+
-      `&serie=${encodeURIComponent(S.serie)}`+
-      `&desde=${desde}&hasta=${hasta}`;
+const url =
+  `api/datos?fuente=${encodeURIComponent(S.fuente)}`+
+  `&frecuencia=${encodeURIComponent(S.frecuencia)}`+
+  `&serie=${encodeURIComponent(S.serie)}`+
+  `&desde=${desde}&hasta=${hasta}`;
+   
     S.result = await api(url);
     renderResult(S.result);
     st('', '');
